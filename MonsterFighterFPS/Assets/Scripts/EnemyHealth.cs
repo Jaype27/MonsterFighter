@@ -14,12 +14,19 @@ public class EnemyHealth : MonoBehaviour
         _anim = GetComponent<Animator>();
     }
 
+    void OnParticleCollision(GameObject other) {
+        DamageDealer damageDealer = other.gameObject.GetComponent<DamageDealer>();
 
-    public void DamageTaken(float damage) {
+        if(!damageDealer) { return; }
+        DamageTaken(damageDealer);
+    }
+
+
+    public void DamageTaken(DamageDealer damageDealer) {
         
         BroadcastMessage("OnDamageTaken");
         
-        _healthPoints -= damage;
+        _healthPoints -= damageDealer.GetDamage();
 
         if(_healthPoints <= 0) {
            Die();

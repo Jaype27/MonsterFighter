@@ -448,8 +448,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _fpCamera: {fileID: 0}
-  _range: 100
-  _damage: 30
   _fireRate: 0.5
   _muzzleFlash: {fileID: 6618178848312631927}
   _hitEffect: {fileID: 3206269271894736250, guid: 0a483ce44cd9e464f9d91ff5ba9fc1c6,
@@ -458,6 +456,7 @@ MonoBehaviour:
   _ammoType: 1
   _nextShot: 0.5
   _ammoText: {fileID: 0}
+  _bulletShot: {fileID: 0}
 --- !u!114 &5715896421030219366
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -644,6 +643,7 @@ GameObject:
   - component: {fileID: 5118589933570530371}
   - component: {fileID: 6583502727606139660}
   - component: {fileID: 7558375728820405715}
+  - component: {fileID: 6939498520395760221}
   m_Layer: 0
   m_Name: Pellets
   m_TagString: Untagged
@@ -801,7 +801,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 50
+      scalar: 100
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -5445,6 +5445,19 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &6939498520395760221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5176363498451175093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92c6d5f93dff84c4e8a3bf9e6f1e48ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damage: 8
 --- !u!1001 &7633630098776765227
 PrefabInstance:
   m_ObjectHideFlags: 0
