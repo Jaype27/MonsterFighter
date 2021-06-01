@@ -8,6 +8,8 @@ public class Weapons : MonoBehaviour
 {
 
     [SerializeField] Camera _fpCamera;
+    [SerializeField] float _range = 100f;
+    [SerializeField] float _damage = 30f;
     [SerializeField] float _fireRate = 0.5f;
     [SerializeField] ParticleSystem _muzzleFlash;
     [SerializeField] GameObject _hitEffect;
@@ -16,7 +18,11 @@ public class Weapons : MonoBehaviour
     [SerializeField] float _nextShot = 0.5f;
     [SerializeField] Text _ammoText;
     bool _canShoot = true;
-    [SerializeField] ParticleSystem _bulletShot;
+    [SerializeField] AudioSource _shootSound;
+    
+    // [SerializeField] ParticleSystem _bulletShot;
+
+    
 
 
     private void OnEnable() {
@@ -45,7 +51,8 @@ public class Weapons : MonoBehaviour
         if(_ammoSlot.GetCurrentAmmo(_ammoType) > 0) {
         
             PlayMuzzleFlash();
-            PlayShot();
+            PlayShootSound();
+            ProcessRayCast();
             
             _ammoSlot.ShootCurrentAmmo(_ammoType);
         }
@@ -55,7 +62,30 @@ public class Weapons : MonoBehaviour
         _muzzleFlash.Play();
     }
 
-    void PlayShot() {
-        _bulletShot.Play();
+    void PlayShootSound() {
+        _shootSound.Play();
     }
+
+    private void ProcessRayCast() {
+        RaycastHit hit;
+
+        if (Physics.Raycast(_fpCamera.transform.position, _fpCamera.transform.forward, out hit, _range)) {
+
+            HitImpact(hit);
+            EnemyHealth target = hit.transform.GetComponent<EnemyHealth>();
+            if (target == null) return;
+            target.DamageTaken(_damage);
+        } else {
+            return;
+        }
+    }
+
+    void HitImpact(RaycastHit hit) {
+       GameObject impact = Instantiate(_hitEffect, hit.point, Quaternion.LookRotation(hit.normal));
+       Destroy(impact, 0.1f);
+    }
+
+    /*void PlayShot() {
+        _bulletShot.Play();
+    }*/
 }

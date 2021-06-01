@@ -14,7 +14,30 @@ public class EnemyHealth : MonoBehaviour
         _anim = GetComponent<Animator>();
     }
 
-    void OnParticleCollision(GameObject other) {
+    
+
+    public void DamageTaken(float damage) {
+        
+        DamageDealer damageDealer = GetComponent<DamageDealer>();
+
+        BroadcastMessage("OnDamageTaken");
+
+        _healthPoints -= damage;
+
+        if(_healthPoints <= 0) {
+           Die();
+        } 
+    }
+
+
+    void Die() {
+        
+        if(isDead) return;
+        isDead = true;
+        _anim.SetTrigger("isDead");
+    }
+
+    /*void OnParticleCollision(GameObject other) {
         DamageDealer damageDealer = other.gameObject.GetComponent<DamageDealer>();
 
         if(!damageDealer) { return; }
@@ -31,12 +54,5 @@ public class EnemyHealth : MonoBehaviour
         if(_healthPoints <= 0) {
            Die();
         }
-    }
-
-    void Die() {
-        
-        if(isDead) return;
-        isDead = true;
-        _anim.SetTrigger("isDead");
-    }
+    }*/
 }
