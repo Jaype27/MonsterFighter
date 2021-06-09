@@ -70,11 +70,19 @@ public class Weapons : MonoBehaviour
         RaycastHit hit;
 
         if (Physics.Raycast(_fpCamera.transform.position, _fpCamera.transform.forward, out hit, _range)) {
-
-            HitImpact(hit);
-            EnemyHealth target = hit.transform.GetComponent<EnemyHealth>();
-            if (target == null) return;
-            target.DamageTaken(_damage);
+            
+            if(hit.transform.tag == "Enemy") {
+                HitImpact(hit);
+                EnemyHealth target = hit.transform.GetComponent<EnemyHealth>();
+                if (target == null) return;
+                target.DamageTaken(_damage);
+            } else if(hit.transform.tag == "Head") {
+                HitImpact(hit);
+                EnemyHealth target = hit.transform.GetComponentInParent<EnemyHealth>();
+                if (target == null) return;
+                target.DamageTaken(_damage * 2);
+            }
+            
         } else {
             return;
         }
@@ -88,4 +96,9 @@ public class Weapons : MonoBehaviour
     /*void PlayShot() {
         _bulletShot.Play();
     }*/
+
+    void OnDrawGizmosSelected() {
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(transform.position, _range);
+    }
 }

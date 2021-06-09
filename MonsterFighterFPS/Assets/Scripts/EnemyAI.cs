@@ -70,10 +70,7 @@ public class EnemyAI : MonoBehaviour
     void ChaseTarget() {
         _anim.SetBool("attack", false);
         _anim.SetTrigger("move");
-        
-        if(_target == null) {
-            _navMeshAgent.SetDestination(_target.position);
-        }
+        _navMeshAgent.SetDestination(_target.position);
     }
 
     void AttackTarget() {

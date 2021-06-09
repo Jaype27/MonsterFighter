@@ -1,5 +1,5 @@
 ﻿public enum AmmoType {
-    BULLETS,
+    RIFLE,
     SHELLS,
-    ROCKET
+    PISTOL
 }

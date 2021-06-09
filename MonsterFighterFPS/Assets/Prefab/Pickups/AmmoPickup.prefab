@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2730433801201843355}
   - component: {fileID: 1279886361}
+  - component: {fileID: 8513234310185565336}
   m_Layer: 8
   m_Name: AmmoPickup
   m_TagString: Untagged
@@ -45,3 +46,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _ammoAmount: 5
   _ammoType: 0
+--- !u!65 &8513234310185565336
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6387404645560318024}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.8646965, y: 0.9219501, z: 0.81149673}
+  m_Center: {x: 16.415735, y: 0.4620782, z: -9.50964}

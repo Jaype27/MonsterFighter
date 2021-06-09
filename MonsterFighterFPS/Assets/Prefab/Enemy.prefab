@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 9054298745770703243}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -87,10 +87,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.35
-  m_Height: 1.78
+  m_Radius: 0.26
+  m_Height: 1.5
   m_Direction: 1
-  m_Center: {x: 0, y: 1, z: 0}
+  m_Center: {x: -0.000000029802322, y: 0.8, z: -0.04205455}
 --- !u!195 &2245684292657361754
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -111,7 +111,7 @@ NavMeshAgent:
   m_AutoRepath: 1
   m_Height: 1.8
   m_BaseOffset: 0
-  m_WalkableMask: 4294967295
+  m_WalkableMask: 1
   m_ObstacleAvoidanceType: 4
 --- !u!114 &2245684292657361755
 MonoBehaviour:
@@ -125,7 +125,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c56431e3f1d228541b6aaf7caa16c47d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _target: {fileID: 0}
   _chaseRange: 10
   _turnSpeed: 3
 --- !u!114 &5572717394636422984
@@ -140,7 +139,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1a5eb5baf9ab14e96d242e031474f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _healthPoints: 100
+  _healthPoints: 10
 --- !u!114 &6539327278654488060
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -173,6 +172,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!135 &2620966956869579818
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5351980824810376281}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.15378536
+  m_Center: {x: 0.00000004509233, y: -0.01740411, z: 1.640884}
 --- !u!1001 &6174706518173931537
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -184,6 +196,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Zombie1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2303301940191007816, guid: ee7a1517abd2b41439424240f6ce0fbe,
+        type: 3}
+      propertyPath: m_TagString
+      value: Head
       objectReference: {fileID: 0}
     - target: {fileID: 2609731523451782695, guid: ee7a1517abd2b41439424240f6ce0fbe,
         type: 3}
@@ -246,6 +263,12 @@ PrefabInstance:
 --- !u!4 &8180601958050061878 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2609731523451782695, guid: ee7a1517abd2b41439424240f6ce0fbe,
+    type: 3}
+  m_PrefabInstance: {fileID: 6174706518173931537}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5351980824810376281 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2303301940191007816, guid: ee7a1517abd2b41439424240f6ce0fbe,
     type: 3}
   m_PrefabInstance: {fileID: 6174706518173931537}
   m_PrefabAsset: {fileID: 0}

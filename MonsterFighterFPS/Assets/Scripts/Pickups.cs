@@ -8,10 +8,11 @@ public class Pickups : MonoBehaviour
     [SerializeField] int _ammoAmount = 5;
     [SerializeField] AmmoType _ammoType;
     
+
+    
     void OnTriggerEnter(Collider other) {
         
         other.GetComponent<Ammo>().IncreaseAmmoType(_ammoType, _ammoAmount);
-        
         Destroy(gameObject);
     }
 }

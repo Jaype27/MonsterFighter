@@ -1,10 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemyHealth : MonoBehaviour
 {
+
     [SerializeField] float _healthPoints = 100f;
+    EnemyAI _enemyAI;
+    
     Animator _anim;
     bool isDead = false;
 
@@ -12,6 +16,7 @@ public class EnemyHealth : MonoBehaviour
 
     void Start() {
         _anim = GetComponent<Animator>();
+        // _enemyAI = GetComponent<EnemyAI>();
     }
 
     
@@ -20,7 +25,7 @@ public class EnemyHealth : MonoBehaviour
         
         DamageDealer damageDealer = GetComponent<DamageDealer>();
 
-        BroadcastMessage("OnDamageTaken");
+        BroadcastMessage("OnDamageTaken"); // EnemyAI
 
         _healthPoints -= damage;
 
@@ -35,7 +40,13 @@ public class EnemyHealth : MonoBehaviour
         if(isDead) return;
         isDead = true;
         _anim.SetTrigger("isDead");
+        GetComponent<EnemyAI>().enabled = false;
+        GetComponent<CapsuleCollider>().enabled = false;
+        GetComponentInChildren<SphereCollider>().enabled = false;
+        GetComponent<NavMeshAgent>().enabled = false;
+        
     }
+
 
     /*void OnParticleCollision(GameObject other) {
         DamageDealer damageDealer = other.gameObject.GetComponent<DamageDealer>();
