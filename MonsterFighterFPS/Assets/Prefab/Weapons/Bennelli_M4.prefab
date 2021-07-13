@@ -187,7 +187,7 @@ Transform:
   m_GameObject: {fileID: 1224404598995671444}
   m_LocalRotation: {x: -0, y: 0.9991535, z: -0, w: 0.04113801}
   m_LocalPosition: {x: 0.12, y: -0.069, z: 0.435}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1218380310718867426}
   - {fileID: 1218313186574741936}
@@ -254,6 +254,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _fpCamera: {fileID: 0}
+  _range: 100
+  _damage: 30
   _fireRate: 2
   _muzzleFlash: {fileID: 0}
   _hitEffect: {fileID: 3206269271894736250, guid: 0a483ce44cd9e464f9d91ff5ba9fc1c6,
@@ -262,7 +264,7 @@ MonoBehaviour:
   _ammoType: 1
   _nextShot: 0.5
   _ammoText: {fileID: 0}
-  _bulletShot: {fileID: 0}
+  _shootSound: {fileID: 0}
 --- !u!114 &3126214294264321706
 MonoBehaviour:
   m_ObjectHideFlags: 0

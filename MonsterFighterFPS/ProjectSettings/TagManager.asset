@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Enemy
   - Head
+  - Gate
+  - Fuse
   layers:
   - Default
   - TransparentFX
