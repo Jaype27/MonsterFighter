@@ -8,6 +8,7 @@ TagManager:
   - Head
   - Gate
   - Fuse
+  - End
   layers:
   - Default
   - TransparentFX

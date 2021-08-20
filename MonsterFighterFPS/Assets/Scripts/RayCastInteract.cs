@@ -8,10 +8,11 @@ public class RayCastInteract : MonoBehaviour
     [SerializeField] Camera _fpsCamera;
     [SerializeField] float _range;
     [SerializeField] int _fuses = 0;
+    [SerializeField] Canvas _interactText;
     
     // Start is called before the first frame update
     void Start() {
-        
+        _interactText.enabled = false;
     }
 
     // Update is called once per frame
@@ -23,9 +24,10 @@ public class RayCastInteract : MonoBehaviour
         RaycastHit hit;
 
         if(Physics.Raycast(_fpsCamera.transform.position, _fpsCamera.transform.forward, out hit, _range)) {
+            _interactText.enabled = true;
             if(hit.transform.tag == "Gate") {
                 if(Input.GetKeyDown(KeyCode.E)) {
-                    if(_fuses == 3) {
+                    if(_fuses >= 3) {
                         GateFunctions gateFunctions = hit.transform.GetComponent<GateFunctions>();
                         if(gateFunctions == null) return;
                         gateFunctions.GateOpen();
@@ -33,8 +35,13 @@ public class RayCastInteract : MonoBehaviour
                         Debug.Log("Insufficient Fuses");
                     }
                 }           
+            } else if(hit.transform.tag == "End") {
+                if(Input.GetKeyDown(KeyCode.E)) {
+                    GetComponent<DeathHandler>().EndGame();
+                }           
             }
         } else {
+            _interactText.enabled = false;
             return;
         }
 

@@ -33,7 +33,7 @@ public class Knife : MonoBehaviour
     }
 
     void DisplayAmmo() {
-        _ammoText.text = "Infinite";
+        _ammoText.text = "";
     }
 
     public void ProcessRayCast() {

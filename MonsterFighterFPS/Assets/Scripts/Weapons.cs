@@ -8,14 +8,15 @@ public class Weapons : MonoBehaviour
 {
 
     [SerializeField] Camera _fpCamera;
-    [SerializeField] float _range = 100f;
-    [SerializeField] float _damage = 30f;
-    [SerializeField] float _fireRate = 0.5f;
+    [Range(5f, 50f)][SerializeField] float _range;
+    [Range(1f, 30f)] [SerializeField] float _damage;
+    [Range(0.1f, 1.0f)] [SerializeField] float _fireRate;
+    [Range(0.1f, 1.0f)] [SerializeField] float _nextShot;
     [SerializeField] ParticleSystem _muzzleFlash;
     [SerializeField] GameObject _hitEffect;
     [SerializeField] Ammo _ammoSlot;
     [SerializeField] AmmoType _ammoType;
-    [SerializeField] float _nextShot = 0.5f;
+    
     [SerializeField] Text _ammoText;
     bool _canShoot = true;
     [SerializeField] AudioSource _shootSound;
