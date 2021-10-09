@@ -11,47 +11,60 @@ public class Knife : MonoBehaviour
     Animator _anim;
     [SerializeField] float _damage;
     [SerializeField] Text _ammoText;
+    [Range(1f, 2f)] [SerializeField] float _damageMultiplier = 1.1f;
 
-    
-    void Start() {
+
+    void Start()
+    {
         _enemyHealth = FindObjectOfType<EnemyHealth>();
 
         _anim = GetComponent<Animator>();
     }
 
-    void Update() {
+    void Update()
+    {
         DisplayAmmo();
         KnifeAnimation();
     }
-    
-    void KnifeAnimation() {
-        
-        if(Input.GetMouseButtonDown(0)) {
+
+    void KnifeAnimation()
+    {
+
+        if (Input.GetMouseButtonDown(0))
+        {
             _anim.SetTrigger("stab");
 
         }
     }
 
-    void DisplayAmmo() {
+    void DisplayAmmo()
+    {
         _ammoText.text = "";
     }
 
-    public void ProcessRayCast() {
+    public void ProcessRayCast()
+    {
         RaycastHit hit;
 
-        if (Physics.Raycast(_fpCamera.transform.position, _fpCamera.transform.forward, out hit, _range)) {
-            
-            if(hit.transform.tag == "Enemy") {
+        if (Physics.Raycast(_fpCamera.transform.position, _fpCamera.transform.forward, out hit, _range))
+        {
+
+            if (hit.transform.tag == "Enemy")
+            {
                 EnemyHealth target = hit.transform.GetComponent<EnemyHealth>();
                 if (target == null) return;
                 target.DamageTaken(_damage);
-            } else if(hit.transform.tag == "Head") {
+            }
+            else if (hit.transform.tag == "Head")
+            {
                 EnemyHealth target = hit.transform.GetComponentInParent<EnemyHealth>();
                 if (target == null) return;
-                target.DamageTaken(_damage * 2);
+                target.DamageTaken(_damage * _damageMultiplier);
             }
-            
-        } else {
+
+        }
+        else
+        {
             return;
         }
     }

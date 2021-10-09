@@ -193,6 +193,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ShellsPickup
       objectReference: {fileID: 0}
+    - target: {fileID: 6387404645560318024, guid: 55c28f567626ec945b8d86f761d6896e,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickup
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8513234310185565336, guid: 55c28f567626ec945b8d86f761d6896e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 55c28f567626ec945b8d86f761d6896e, type: 3}

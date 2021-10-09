@@ -9,6 +9,9 @@ TagManager:
   - Gate
   - Fuse
   - End
+  - Weapon
+  - Pickup
+  - Heal
   layers:
   - Default
   - TransparentFX

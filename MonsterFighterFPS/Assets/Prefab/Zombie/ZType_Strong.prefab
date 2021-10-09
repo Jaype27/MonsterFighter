@@ -999,6 +999,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4686647211020670547}
+  - component: {fileID: 7270846480413296795}
+  - component: {fileID: 1666751216183537311}
   m_Layer: 0
   m_Name: LeftHand
   m_TagString: Untagged
@@ -1025,6 +1027,32 @@ Transform:
   m_Father: {fileID: 5763907039295921108}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &7270846480413296795
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3891804615573657329}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.11
+  m_Center: {x: -0.18, y: 0, z: 0}
+--- !u!114 &1666751216183537311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3891804615573657329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a6f151d6bed9e34ba59b333184fec1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damage: 5
 --- !u!1 &3926841784786367756
 GameObject:
   m_ObjectHideFlags: 0
@@ -1197,7 +1225,6 @@ GameObject:
   - component: {fileID: 8426609482128144985}
   - component: {fileID: 5378210845279961047}
   - component: {fileID: 3367229366989834168}
-  - component: {fileID: 843039497666489170}
   - component: {fileID: 3472156615486679589}
   m_Layer: 0
   m_Name: ZType_Strong
@@ -1232,10 +1259,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.29
-  m_Height: 1.7419081
+  m_Radius: 0.4
+  m_Height: 1.8
   m_Direction: 1
-  m_Center: {x: -0.000000029802322, y: 0.920954, z: -0.042054534}
+  m_Center: {x: -0.000000029028607, y: 0.9468808, z: -0.042054534}
 --- !u!195 &8426609482128144985
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1272,6 +1299,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _chaseRange: 10
   _turnSpeed: 3
+  _sphereCollider:
+  - {fileID: 7270846480413296795}
 --- !u!114 &3367229366989834168
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1285,19 +1314,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _healthPoints: 50
---- !u!114 &843039497666489170
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4390725801120401141}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a6f151d6bed9e34ba59b333184fec1c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _damage: 5
+  _sphereCollider:
+  - {fileID: 7270846480413296795}
 --- !u!95 &3472156615486679589
 Animator:
   serializedVersion: 3
@@ -2326,5 +2344,5 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.17
+  m_Radius: 0.2
   m_Center: {x: -0.005970955, y: 0.03232205, z: 0.05335927}

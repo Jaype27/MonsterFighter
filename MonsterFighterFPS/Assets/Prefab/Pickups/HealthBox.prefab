@@ -638,7 +638,7 @@ GameObject:
   - component: {fileID: 6811627613286287064}
   m_Layer: 0
   m_Name: HealthBox
-  m_TagString: Untagged
+  m_TagString: Heal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -7,44 +7,54 @@ public class EnemyHealth : MonoBehaviour
 {
 
     [SerializeField] float _healthPoints = 100f;
+    [SerializeField] SphereCollider[] _sphereCollider;
     EnemyAI _enemyAI;
-    
     Animator _anim;
     bool isDead = false;
 
     public bool IsDead() { return isDead; }
 
-    void Start() {
+    void Start()
+    {
         _anim = GetComponent<Animator>();
         // _enemyAI = GetComponent<EnemyAI>();
     }
 
-    
 
-    public void DamageTaken(float damage) {
-        
+
+    public void DamageTaken(float damage)
+    {
+
         DamageDealer damageDealer = GetComponent<DamageDealer>();
 
         BroadcastMessage("OnDamageTaken"); // EnemyAI
 
         _healthPoints -= damage;
 
-        if(_healthPoints <= 0) {
-           Die();
-        } 
+        if (_healthPoints <= 0)
+        {
+            Die();
+        }
     }
 
 
-    void Die() {
-        
-        if(isDead) return;
+    void Die()
+    {
+
+        if (isDead) return;
         isDead = true;
         _anim.SetTrigger("isDead");
         GetComponent<EnemyAI>().enabled = false;
         GetComponent<CapsuleCollider>().enabled = false;
-        GetComponentInChildren<SphereCollider>().enabled = false;
         GetComponent<NavMeshAgent>().enabled = false;
-        
+
+        _sphereCollider = GetComponentsInChildren<SphereCollider>();
+
+        foreach (SphereCollider sphere in _sphereCollider)
+        {
+            sphere.enabled = false;
+        }
+
     }
 
 
