@@ -6,9 +6,13 @@ using UnityEngine.SceneManagement;
 public class SceneLoader : MonoBehaviour
 {
     [SerializeField] GameObject _controlPanel;
+    [SerializeField] GameObject _gameElements;
+    [SerializeField] GameObject _menuElements;
     
     public void StartGame() {
-        SceneManager.LoadScene("Main");
+        _gameElements.SetActive(true);
+        _menuElements.SetActive(false);
+        // SceneManager.LoadScene("Main");
     }
 
     public void Controls() {
