@@ -5,8 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
+    [SerializeField] GameObject _controlPanel;
     
-    
+    public void StartGame() {
+        SceneManager.LoadScene("Main");
+    }
+
+    public void Controls() {
+        _controlPanel.SetActive(true);
+    }
+
     public void PlayAgain() {
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentSceneIndex);
@@ -15,5 +23,9 @@ public class SceneLoader : MonoBehaviour
     
     public void QuitGame() {
         Application.Quit();
+    }
+
+    public void BackButton() {
+        _controlPanel.SetActive(false);
     }
 }
