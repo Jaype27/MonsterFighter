@@ -224,6 +224,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2232545714495320270}
+  - component: {fileID: 8262721036168131563}
+  - component: {fileID: 8839924632495896482}
   m_Layer: 0
   m_Name: Base HumanLArmPalm
   m_TagString: Untagged
@@ -250,6 +252,32 @@ Transform:
   m_Father: {fileID: 1976193686197787863}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &8262721036168131563
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 643338787962920652}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.12
+  m_Center: {x: -0.09, y: 0, z: 0}
+--- !u!114 &8839924632495896482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 643338787962920652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a6f151d6bed9e34ba59b333184fec1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damage: 5
 --- !u!1 &1001919277707232437
 GameObject:
   m_ObjectHideFlags: 0
@@ -461,7 +489,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2609731523451782695}
-  - component: {fileID: 5385640224417065821}
   m_Layer: 0
   m_Name: Zombie1
   m_TagString: Untagged
@@ -498,25 +525,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &5385640224417065821
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1327709934756656180}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 8f7380da49034cd488ddff94b1ac35d1, type: 3}
-  m_Controller: {fileID: 9100000, guid: 2ef8e6599b7f9934e8ff0d64c5325a1f, type: 2}
-  m_CullingMode: 1
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 1
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1538419719092433430
 GameObject:
   m_ObjectHideFlags: 0
@@ -759,9 +767,10 @@ GameObject:
   m_Component:
   - component: {fileID: 2508878440783449471}
   - component: {fileID: 8701487681758920523}
+  - component: {fileID: 2923007378784283644}
   m_Layer: 0
   m_Name: Z_Head
-  m_TagString: Untagged
+  m_TagString: Head
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -841,6 +850,19 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.13655424, y: 0.08126316, z: 0.000000037252903}
     m_Extent: {x: 0.15378535, y: 0.12076975, z: 0.08768331}
   m_DirtyAABB: 0
+--- !u!65 &2923007378784283644
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2303301940191007816}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.17536665, y: 0.24153954, z: 0.278794}
+  m_Center: {x: 0.000000044703484, y: -0.01740411, z: 1.6552724}
 --- !u!1 &2403532284324591526
 GameObject:
   m_ObjectHideFlags: 0
@@ -1340,7 +1362,7 @@ GameObject:
   - component: {fileID: 6741171736192633630}
   m_Layer: 0
   m_Name: Base HumanHead
-  m_TagString: Untagged
+  m_TagString: Head
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2981,6 +3003,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4666033190534475734}
+  - component: {fileID: 1920438403598546715}
+  - component: {fileID: 7700339825358360237}
   m_Layer: 0
   m_Name: Base HumanRArmPalm
   m_TagString: Untagged
@@ -3007,3 +3031,29 @@ Transform:
   m_Father: {fileID: 4206852140445881539}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &1920438403598546715
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9106560684454407072}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.12
+  m_Center: {x: -0.09, y: 0, z: 0}
+--- !u!114 &7700339825358360237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9106560684454407072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a6f151d6bed9e34ba59b333184fec1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damage: 5

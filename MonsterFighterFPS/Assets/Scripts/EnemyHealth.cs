@@ -46,6 +46,7 @@ public class EnemyHealth : MonoBehaviour
         _anim.SetTrigger("isDead");
         GetComponent<EnemyAI>().enabled = false;
         GetComponent<CapsuleCollider>().enabled = false;
+        GetComponentInChildren<BoxCollider>().enabled = false;
         GetComponent<NavMeshAgent>().enabled = false;
 
         _sphereCollider = GetComponentsInChildren<SphereCollider>();

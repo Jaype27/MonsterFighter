@@ -296,7 +296,7 @@ Transform:
   m_GameObject: {fileID: 2481287893394231528}
   m_LocalRotation: {x: 0.004309711, y: 0.9997063, z: -0.023847437, w: 0.000102805745}
   m_LocalPosition: {x: 0.097, y: -0.065, z: 0.293}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 2478703156631767424}
   - {fileID: 2483855810917820322}
@@ -319,10 +319,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2103cdc5cc669584da924d0fec89e6fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _fpCamera: {fileID: 2639141931646637513, guid: fdd06e1b52e485044b82b9fb11b53068,
-    type: 3}
+  _fpCamera: {fileID: 0}
   _range: 15
-  _damage: 30
+  _damage: 15
   _fireRate: 0.2
   _nextShot: 0.5
   _muzzleFlash: {fileID: 7136936921059619079}
@@ -333,7 +332,7 @@ MonoBehaviour:
   _ammoText: {fileID: 0}
   _shootSound: {fileID: 3331793028459213323}
   _gunEmptySound: {fileID: 2490625076998537681}
-  _damageMultiplier: 1.1
+  _damageMultiplier: 2
 --- !u!114 &7268581063541070385
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -346,10 +345,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edd3267e7eee78a44a5c9ba299954adc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _fpsCamera: {fileID: 2639141931646637513, guid: fdd06e1b52e485044b82b9fb11b53068,
-    type: 3}
-  _fpsController: {fileID: 2639141931637121549, guid: fdd06e1b52e485044b82b9fb11b53068,
-    type: 3}
+  _fpsCamera: {fileID: 0}
+  _fpsController: {fileID: 0}
   _zoomInFOV: 40
   _mouseSensitivityZoom: 0.5
 --- !u!135 &1393207626

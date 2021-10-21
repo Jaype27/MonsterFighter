@@ -685,7 +685,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6566408995136778211}
-  m_LocalRotation: {x: -0, y: 0.35409707, z: -0, w: 0.9352087}
+  m_LocalRotation: {x: 0, y: 0.35409525, z: 0, w: 0.9352094}
   m_LocalPosition: {x: 7.144422, y: 1, z: 13.642691}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -736,7 +736,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00ab43a388083004783afb124c3bc639, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxPlayerHealth: 999
+  _maxPlayerHealth: 100
   _healthText: {fileID: 0}
 --- !u!114 &3432054704681015990
 MonoBehaviour:
@@ -752,6 +752,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _gameOverCanvas: {fileID: 0}
   _endGameCanvas: {fileID: 0}
+  _pauseGameCanvas: {fileID: 0}
 --- !u!114 &4942426534294534695
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -873,7 +874,10 @@ MonoBehaviour:
   _messageDuration: 2
   _messageText: {fileID: 0}
   _fuseAmount: {fileID: 0}
-  _characterSFX: []
+  _characterSFX:
+  - {fileID: 6566408994141839810}
+  - {fileID: 6566408993872701862}
+  - {fileID: 1472269174455471195}
 --- !u!114 &6566408995136778210
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1060,6 +1064,16 @@ PrefabInstance:
         type: 3}
       propertyPath: _minAngle
       value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 7658174370119931158, guid: b93b3e24292609b46917ea524b90df6f,
+        type: 3}
+      propertyPath: _lightDecay
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 7658174370119931158, guid: b93b3e24292609b46917ea524b90df6f,
+        type: 3}
+      propertyPath: _angleDecay
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b93b3e24292609b46917ea524b90df6f, type: 3}

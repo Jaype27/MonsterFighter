@@ -6,10 +6,13 @@ public class DeathHandler : MonoBehaviour
 {
     [SerializeField] Canvas _gameOverCanvas;
     [SerializeField] Canvas _endGameCanvas;
+    [SerializeField] Canvas _pauseGameCanvas;
+
 
     void Start() {
         _gameOverCanvas.enabled = false;
         _endGameCanvas.enabled = false;
+        _pauseGameCanvas.enabled = false;
     }
 
     public void HandleDeath() {
